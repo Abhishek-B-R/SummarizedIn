@@ -10,25 +10,3 @@ services:
     env_file: ./backend/.env
     ports:
       - "8085:8085"
-    networks:
-      - summarizer-net
-
-  nginx:
-    image: nginx:latest
-    container_name: summarizer-nginx
-    restart: always
-    volumes:
-      - ./nginx/linkedin-summarizer.conf:/etc/nginx/conf.d/default.conf
-      - /etc/letsencrypt:/etc/letsencrypt
-    ports:
-      - "80:80"
-      - "443:443"
-    depends_on:
-      - summarizer
-    networks:
-      - summarizer-net
-
-networks:
-  summarizer-net:
-    driver: bridge
-
