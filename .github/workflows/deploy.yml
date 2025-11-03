@@ -41,7 +41,7 @@ jobs:
           port: 22
           script: |
             set -e
-            cd /home/azure/LinkedinSummarizer
+            cd /home/azureuser/LinkedinSummarizer
             docker compose pull
             docker compose up -d --build
             docker image prune -a -f
