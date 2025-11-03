@@ -14,7 +14,7 @@ export default function Home() {
     setSummary(null)
 
     try {
-      const response = await fetch("http://localhost:8085/summarize", {
+      const response = await fetch("https://api.summarizedin.abhishekbr.dev/summarize", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
